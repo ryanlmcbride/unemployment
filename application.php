@@ -2,6 +2,14 @@
   <head>
     <title>Application</title>
     <style>
+        div {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      }
+      input[type=text]:focus {
+      border: 3px solid rgba(#555555, 0.65);
+      }
     </style>
   </head>
 
@@ -13,70 +21,123 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <!-- Body Starts Here -->
   <body>
-    <div class="container">
-      <strong><p class="jumbotron" style="font-size:40px; color: #ffffff; background-color:#96c3ee; text-align:center; font-family:arial;">Register</p></strong>
-      <div class="row" id="main">
-        <div class="col-md-1"></div>
-        <div class="col-md-1">
-      <form method="POST" class="form-horizontal" action="#">
-        <div class="form-group">
-          <label for="soc_sec_id"> Social Security Number</label>
-          <div class="col-sm-10">
-          <input type="password" class="form-control" placeholder="SSN" name="soc_sec_id">
-        </div>
-        </div>
-        <div class="form-group">
-          <label for="first_name"> First Name </label>
-          <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="First Name" name="first_name">
-        </div>
-        </div>
-        <div class="form-group">
-          <label for="last_name"> Last Name </label>
-          <input type="text" class="form-control" placeholder="Last Name" name="last_name">
-        <div>
-        <div class="form-group">
-          <label for="email"> Email Address </label>
-          <input type="text" class="form-control" placeholder="E-mail" name="email">
-        </div>
-        <div class="form-group">
-          <label for="username"> Username </label>
-          <input type="text" class="form-control" placeholder="Username" name="username">
-        </div>
-        <div class="form-group">
-          <label for="password"> Password </label>
-          <input type="password"  class="form-control" placeholder="Password" name="password">
-        </div>
-        <div class="form-group">
-          <label for="dob"> Date of Birth </label>
-          <input type="text" class="form-control" placeholder="MM/DD/YY" name="dob">
-        </div>
-        <div class="form-group">
-          <label for="address"> Address </label>
-          <input type="text" class="form-control" placeholder="Address" name="address">
-        </div>
-        <div class="form-group">
-          <label for="city"> City </label>
-          <input type="text" class="form-control" placeholder="City" name="city">
-        </div>
-        <div class="form-group">
-          <label for="state_id"> State </label>
-          <input type="text" class="form-control" placeholder="State" name="state_id">
-        </div>
-        <div class="form-group">
-          <label for="zipcode">Zip Code</label>
-          <input type="text" class="form-control" placeholder="Zip" name="zipcode">
-        </div>
-        <div class="form-group">
-          <label for="dob">Gender</label>
-          <input type="text" class="form-control" placeholder="Gender" name="gender">
-        </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#">BDPA Unemployement Portal</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-        <button type="submit" name="submit">Register</button>
-      </form>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">File Claim</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Profile
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">View Account Information</a>
+          <a class="dropdown-item" href="#">Something</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Login</a>
+        </li>
+      </ul>
+    </form>
   </div>
-  <div class="col-md-2"></div>
-  </div>
+</nav>
+    <div class="container">
+      <strong><p class="jumbotron" style="font-size:40px; color: #ffffff; background-color:#96c3ee; text-align:center; font-family:arial;">File Your Claim</p></strong>
+      <form method="POST" class="form-horizontal" action="#">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <div class="form-group row">
+              <label for="soc_sec_id"> Social Security Number</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" placeholder="SSN" name="soc_sec_id">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="date">Last Date of Employment</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="MM/DD/YYYY" name="date">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="f_company">Former Employer/Company</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Former Employer/Company Name" name="f_company">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="f_department">Former Department</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Former Employer Department" name="f_department">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="f_address">Former Company Address</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Former Employer Address" name="f_address">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="city">Company City</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="City" name="city">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="state_id">State ID</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="State ID" name="state_id">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="e_zip">Zip Code</label>
+              <div class="col-sm-10">
+                <input type="text"  class="form-control" placeholder="ZIP" name="e_zip">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="e_email">Employer Email</label>
+              <div class="col-sm-10">
+                <input type="email"  class="form-control" placeholder="email@gmail.com" name="e_email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="e_phone">Employer Phone</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="000-000-0000" name="e_phone">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="salary">Previous Annual Salary</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="$" name="salary">
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" name="submit" class="btn btn-primary">Submit Claim</button>
+            </div>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+      </div>
+    </form>
   </div>
   </body>
 </html>
