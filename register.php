@@ -61,16 +61,15 @@
     <strong><p class="jumbotron" style="font-size:40px; color: #ffffff; background-color:#96c3ee; text-align:center; font-family:arial;">Register</p></strong>
     <div class="container">
       <div class="row" id="main">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
       <form method="POST" align="left">
         <div class="form-group">
+          <div class="col-md-6">
           <label for="soc_sec_id"> Social Security Number</label>
           <input type="password" class="form-control" placeholder="SSN" name="soc_sec_id">
-        </div>
-        <div class="form-group">
-          <label for="dob"> Date of Birth </label>
-          <input type="text" class="form-control" placeholder="MM/DD/YY" name="dob">
+          <div class="form-group">
+            <label for="dob"> Date of Birth </label>
+            <input type="text" class="form-control" placeholder="MM/DD/YYYY" name="dob">
+          </div>
         </div>
         <div class="form-group">
           <label for="gender">Gender</label><br>
@@ -115,9 +114,14 @@
           <label for="city"> City </label>
           <input type="text" class="form-control" placeholder="City" name="city">
         </div>
-        <div class="form-group">
-          <label for="state_id"> State </label>
-          <input type="text" class="form-control" placeholder="State" name="state_id">
+        <div class="dropdown">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            State </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">State 1</a>
+              <a class="dropdown-item" href="#">State 2</a>
+              <a class="dropdown-item" href="#">State 3</a>
+            </div>
         </div>
         <div class="form-group">
           <label for="zipcode">Zip Code</label>

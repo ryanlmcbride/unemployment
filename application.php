@@ -100,11 +100,14 @@
                 <input type="text" class="form-control" placeholder="City" name="city">
               </div>
             </div>
-            <div class="form-group">
-              <label for="state_id">State ID</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="State ID" name="state_id">
-              </div>
+            <div class="dropdown">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                State </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">State 1</a>
+                  <a class="dropdown-item" href="#">State 2</a>
+                  <a class="dropdown-item" href="#">State 3</a>
+                </div>
             </div>
             <div class="form-group">
               <label for="e_zip">Zip Code</label>
