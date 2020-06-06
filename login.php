@@ -1,3 +1,6 @@
+<?php
+require("processLogin.php");
+?>
 <html>
     <head>
         <title> </title>
@@ -15,12 +18,12 @@
         <div class="col-md-6">
     <form method="POST" align="left">
         <div class="form-group">
-          <label for="soc_sec_id"> Social Security Number</label>
-          <input type="password" class="form-control" placeholder="SSN" name="soc_sec_id">
+          <label for="soc_sec_id"> Username</label>
+          <input type="text" class="form-control" placeholder="" name="uname">
         </div>
         <div class="form-group">
-          <label for="dob"> Password </label>
-          <input type="text" class="form-control" placeholder="" name="pWord">
+          <label for="dob"> Social Security Number</label>
+          <input type="password" class="form-control" placeholder="" name="ssn">
         </div>
        <br> <center><button type="submit" name="submit" class="btn btn-primary"> Login </button></center>
         </form>
