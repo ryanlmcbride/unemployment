@@ -110,11 +110,15 @@ require("processRegister.php");
             </div>
             <div class="form-group">
               <label for="stateid">State: </label>
+              <?php
+                $query="SELECT * FROM states";
+                $results=mysqli_query($conn, $query);
+                $row=mysqli_fetch_assoc($results);
+               ?>
               <select name="stateid" id="stateid">
-                <option value="0">D.C.</option>
-                <option value="1">Maryland</option>
-                <option value="2">Virigina</option>
-                <option value="3">Outside the DMV</option>
+                <?php while($row=mysqli_fetch_assoc($results)){ ?>
+                 <option value="<?php echo $row['id'];?>"><?php echo $row['name'];?></option>
+               <?php } ?>
               </select>
             </div>
             </div>
