@@ -41,15 +41,15 @@ require("processRegister.php");
         <div class="form-group">
           <label for="gender">Gender</label><br>
           <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" class="custom-control-input" id="customRadio" name="gender" value="female">
+          <input type="radio" class="custom-control-input" id="customRadio" name="gender1" value="female">
           <label class="custom-control-label" for="female">Female</label>
         </div>
         <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" class="custom-control-input" id="customRadio2" name="gender" value="male">
+          <input type="radio" class="custom-control-input" id="customRadio2" name="gender2" value="male">
           <label class="custom-control-label" for="male">Male</label>
         </div>
         <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" class="custom-control-input" id="customRadio2" name="gender" value="nbinary">
+          <input type="radio" class="custom-control-input" id="customRadio2" name="gender3" value="nbinary">
           <label class="custom-control-label" for="nbinary">Non-binary</label>
         </div>
         </div>
@@ -81,6 +81,7 @@ require("processRegister.php");
           <label for="city"> City </label>
           <input type="text" class="form-control" placeholder="City" name="city">
         </div>
+        <div class="form-group">
         <div class="dropdown">
           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" name="state_id">
             State </button>
@@ -90,6 +91,7 @@ require("processRegister.php");
               <a class="dropdown-item" href="#" name="state3">State 3</a>
             </div>
         </div>
+      </div>
         <div class="form-group">
           <label for="zipcode">Zip Code</label>
           <input type="text" class="form-control" placeholder="Zip" name="zipcode">
