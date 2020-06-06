@@ -40,6 +40,7 @@ require("processRegister.php");
             <input type="text" class="form-control" placeholder="MM/DD/YYYY" name="dob">
           </div>
         </div>
+<<<<<<< HEAD
         <div class="form-group">
           <label for="gender">Gender</label><br>
           <div class="custom-control custom-radio custom-control-inline">
@@ -55,6 +56,17 @@ require("processRegister.php");
           <label class="custom-control-label" for="nbinary">Non-binary</label>
         </div>
         </div>
+=======
+
+        <p>Gender</p>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="nbinary" name="gender" value="nbinary">
+        <label for="other">Non-binary</label><br><br>
+
+>>>>>>> b587710a1fe6793c23fb52341821cd2fef7a9e6f
         <div class="form-group">
           <label for="first_name"> First Name </label>
           <input type="text" class="form-control" placeholder="First Name" name="first_name">
@@ -83,6 +95,7 @@ require("processRegister.php");
           <label for="city"> City </label>
           <input type="text" class="form-control" placeholder="City" name="city">
         </div>
+<<<<<<< HEAD
         <div class="form-group">
         <div class="dropdown">
           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" name="state_id">
@@ -94,6 +107,16 @@ require("processRegister.php");
             </div>
         </div>
       </div>
+=======
+
+        <select name="state">
+          <option value="">Select State:</option>
+          <option value="DC">DC</option>
+          <option value="MD">MD</option>
+          <option value="VA">VA</option>
+        </select>
+
+>>>>>>> b587710a1fe6793c23fb52341821cd2fef7a9e6f
         <div class="form-group">
           <label for="zipcode">Zip Code</label>
           <input type="text" class="form-control" placeholder="Zip" name="zipcode">
