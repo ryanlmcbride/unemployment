@@ -24,12 +24,12 @@
     $notIssued5 = array(000, 666);
     $notIssuedFull = array_merge($notIssued1, $notIssued2, $notIssued3, $notIssued4, $notIssued5);
 
-    if(empty($fname)||empty($lname)||empty($email)||empty($SSN)||empty($uname)||empty($pword)||empty($address)||empty($city||empty($stateid)||empty($zip)||empty($DOB)))
+    if(empty($fname)||empty($lname)||empty($email)||empty($SSN)||empty($uname)||empty($pword)||empty($address)||empty($city)||empty($stateid)||empty($zip)||empty($DOB))
     {
       echo "<html><br><strong style='color: red;'>All fields are required</strong><br></html>";
     }
 
-    if(!is_numeric($SSN) || strlen($SSN) != 9)
+    if(!is_numeric($SSN)&&strlen($SSN)!= 9)
     {
       echo "<html><br><strong style='color: red;'>Invalid SSN</strong><br></html>";
     }

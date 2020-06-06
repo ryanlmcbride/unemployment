@@ -19,11 +19,17 @@ require("processLogin.php");
     <form method="POST" align="left">
         <div class="form-group">
           <label for="soc_sec_id"> Username</label>
-          <input type="text" class="form-control" placeholder="" name="uname">
+          <input type="text" class="form-control" placeholder="" name="uname" required>
         </div>
         <div class="form-group">
           <label for="dob"> Social Security Number</label>
-          <input type="password" class="form-control" placeholder="" name="ssn">
+          <input type="password" class="form-control" maxlength="9" placeholder="" name="ssn" required>
+        </div>
+        <div class="form-group">
+          Don't have an account? <a href="register.php">Register Here</a>
+        </div>
+        <div class="form-group">
+          Admin Sign In <a href="adminLogin.php">Here</a>
         </div>
        <br> <center><button type="submit" name="submit" class="btn btn-primary"> Login </button></center>
         </form>

@@ -20,6 +20,7 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <body>
+    <?php include('check.php'); ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
   <a class="navbar-brand" href="#">
     <div class="logo-image">
@@ -35,6 +36,8 @@
       <li class="nav-item active">
         <a class="nav-link" href="home.php">Home <span class="sr-only"></span></a>
       </li>
+      <?php include('db.php');// include('processLogin.php');
+      if($loginst==1){ ?>
       <li class="nav-item">
         <a class="nav-link" href="#">Inbox</a>
       </li>
@@ -50,14 +53,17 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">View Account Information</a>
-          <a class="dropdown-item" href="#">Something</a>
-          <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout.php">Sign Out</a>
+      </li>
+    <?php } else{ ?>
         <li class="nav-item">
-          <a class="nav-link" href="login.php">Login</a>
+          <a class="nav-link" href="login.php">Login/Register</a>
         </li>
       </ul>
+    <?php } ?>
     </form>
   </div>
 </nav>

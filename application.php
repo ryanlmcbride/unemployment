@@ -31,7 +31,7 @@
             <div class="form-group row">
               <label for="soc_sec_id"> Social Security Number</label>
               <div class="col-sm-10">
-                <input type="password" class="form-control" placeholder="SSN" name="soc_sec_id">
+                <input type="password" maxlength="9" class="form-control" placeholder="SSN" name="soc_sec_id">
               </div>
             </div>
             <div class="form-group">
@@ -106,5 +106,6 @@
       </div>
     </form>
   </div>
+  <?php include('footer.php'); ?>
   </body>
 </html>

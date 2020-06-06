@@ -13,6 +13,13 @@ require("processRegister.php");
       input[type=text]:focus {
       border: 3px solid rgba(#555555, 0.65);
       }
+
+      .inline-block{
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        padding: 5px;
+      }
     </style>
   </head>
 
@@ -24,110 +31,99 @@ require("processRegister.php");
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <!-- Body Starts Here -->
   <body>
-    <?php require('navbar.php');?>
+    <?php //require('navbar.php');?>
     <strong><p class="jumbotron" style="font-size:40px; color: #ffffff; background-color:#96c3ee; text-align:center; font-family:arial;">Register</p></strong>
-    <div class="container">
+    <div class="container-fluid">
+      <form method="POST">
+      Back to Login <a href="adminLogin.php">Here</a>
       <div class="row" id="main">
-      <form method="POST" align="left">
-        <div class="form-group">
-          <div class="col-md-6">
-          <label for="soc_sec_id"> Social Security Number (First Three Digits)</label>
-          <input type="password" class="form-control" placeholder="first 3 digits of ssn" name="soc_sec_id">
-          <label for="ssn2"> Social Security Number (remaining numbers)</label>
-          <input type="password" class="form-control" placeholder="remaining numbers of ssn" name="ssn2">
-          <div class="form-group">
-            <label for="dob"> Date of Birth </label>
-            <input type="text" class="form-control" placeholder="MM/DD/YYYY" name="dob">
-          </div>
-        </div>
-<<<<<<< HEAD
-        <div class="form-group">
-          <label for="gender">Gender</label><br>
-          <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" class="custom-control-input" id="customRadio" name="gender1" value="female">
-          <label class="custom-control-label" for="female">Female</label>
-        </div>
-        <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" class="custom-control-input" id="customRadio2" name="gender2" value="male">
-          <label class="custom-control-label" for="male">Male</label>
-        </div>
-        <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" class="custom-control-input" id="customRadio2" name="gender3" value="nbinary">
-          <label class="custom-control-label" for="nbinary">Non-binary</label>
-        </div>
-        </div>
-=======
-
-        <p>Gender</p>
-        <input type="radio" id="male" name="gender" value="male">
-        <label for="male">Male</label><br>
-        <input type="radio" id="female" name="gender" value="female">
-        <label for="female">Female</label><br>
-        <input type="radio" id="nbinary" name="gender" value="nbinary">
-        <label for="other">Non-binary</label><br><br>
-
->>>>>>> b587710a1fe6793c23fb52341821cd2fef7a9e6f
-        <div class="form-group">
-          <label for="first_name"> First Name </label>
-          <input type="text" class="form-control" placeholder="First Name" name="first_name">
-        </div>
-        <div class="form-group">
-          <label for="last_name"> Last Name </label>
-          <input type="text" class="form-control" placeholder="Last Name" name="last_name">
-        </div>
-        <div class="form-group">
-          <label for="email"> Email Address </label>
-          <input type="text" class="form-control" placeholder="E-mail" name="email">
-        </div>
-        <div class="form-group">
-          <label for="username"> Username </label>
-          <input type="text" class="form-control" placeholder="Username" name="username">
-        </div>
-        <div class="form-group">
-          <label for="password"> Password </label>
-          <input type="password"  class="form-control" placeholder="Password" name="password">
-        </div>
-        <div class="form-group">
-          <label for="address"> Address </label>
-          <input type="text" class="form-control" placeholder="Address" name="address">
-        </div>
-        <div class="form-group">
-          <label for="city"> City </label>
-          <input type="text" class="form-control" placeholder="City" name="city">
-        </div>
-<<<<<<< HEAD
-        <div class="form-group">
-        <div class="dropdown">
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" name="state_id">
-            State </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" name="state" value="DC">DC</a>
-              <a class="dropdown-item" name="state" value="MD">MD</a>
-              <a class="dropdown-item" name="state" value="VA">VA</a>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <div class="col-xs-2">
+                <label for="soc_sec_id"> Social Security Number (First Three Digits)</label>
+                <input type="password" maxlength="3" class="form-control" placeholder="first 3 digits of ssn" name="soc_sec_id">
+              </div>
             </div>
-        </div>
-      </div>
-=======
+            <div class="form-group">
+              <label for="gender">Gender</label><br>
+              <div class="inline-block">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+              </div>
+              <div class="inline-block">
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+              </div>
+              <div class="inline-block">
+                <input type="radio" id="nbinary" name="gender" value="nbinary">
+                <label for="other">Non-binary</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="first_name"> First Name </label>
+              <input type="text" class="form-control" placeholder="First Name" name="first_name">
+            </div>
+            <div class="form-group">
+              <label for="email"> Email Address </label>
+              <input type="text" class="form-control" placeholder="E-mail" name="email">
+            </div>
+            <div class="form-group">
+              <label for="password"> Password </label>
+              <input type="password"  class="form-control" placeholder="Password" name="password">
+            </div>
+            <div class="form-group row">
+              <div class="col-xs-2">
+                <label for="city"> City </label>
+                <input type="text" class="form-control" placeholder="City" name="city">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-xs-2">
+                <label for="zipcode">Zip Code</label>
+                <input type="text" class="form-control" placeholder="Zip" name="zipcode">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" name="submit">Register</button>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="ssn2"> Social Security Number (remaining numbers)</label>
+              <input type="password" maxlength="6" class="form-control" placeholder="remaining numbers of ssn" name="ssn2">
+            </div>
+            <div class="form-group row">
+              <div class="col-xs-2">
+                <label for="dob"> Date of Birth </label>
+                <input type="text" class="form-control" placeholder="MM/DD/YYYY" name="dob"><br><br><br>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="last_name"> Last Name </label>
+              <input type="text" class="form-control" placeholder="Last Name" name="last_name">
+            </div>
+            <div class="form-group">
+              <label for="username"> Username </label>
+              <input type="text" class="form-control" placeholder="Username" name="username">
+            </div>
+            <div class="form-group">
+              <label for="address"> Address </label>
+              <input type="text" class="form-control" placeholder="Address" name="address">
+            </div>
+            <div class="form-group">
+              <div class="dropdown">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" name="state_id">
+              State </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" name="state" value="DC">DC</a>
+                  <a class="dropdown-item" name="state" value="MD">MD</a>
+                  <a class="dropdown-item" name="state" value="VA">VA</a>
+                </div>
+              </div>
+            </div>
 
-        <select name="state">
-          <option value="">Select State:</option>
-          <option value="DC">DC</option>
-          <option value="MD">MD</option>
-          <option value="VA">VA</option>
-        </select>
-
->>>>>>> b587710a1fe6793c23fb52341821cd2fef7a9e6f
-        <div class="form-group">
-          <label for="zipcode">Zip Code</label>
-          <input type="text" class="form-control" placeholder="Zip" name="zipcode">
-        </div>
-
-        <button type="submit" class="btn btn-primary" name="submit">Register</button>
+            </div>
+          </div>
       </form>
-  </div>
-  <div class="col-md-3"></div>
-  </div>
-  </div>
+    </div>
   <?php include('footer.php') ?>
   </body>
 </html>

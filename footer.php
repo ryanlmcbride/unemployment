@@ -15,7 +15,7 @@
 
       <!-- Copyright -->
       <div class="footer-copyright text-center py-3">© 2020 Copyright:
-        <a href="#"> BDPA Team 2</a>
+        <a href="#"> BDPA Unemployment INC.</a>
       </div>
       <!-- Copyright -->
 
