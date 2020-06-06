@@ -1,5 +1,5 @@
 <?php
-  require("db.php");
+  include("db.php");
   if(isset($_POST['submit']))
   {
     $SSN = trim($_POST['soc_sec_id']);
@@ -26,22 +26,22 @@
 
     if(empty($fname)||empty($lname)||empty($email)||empty($SSN)||empty($uname)||empty($pword)||empty($address)||empty($city||empty($stateid)||empty($zip)||empty($DOB)))
     {
-      echo "<html><strong style='color: red;'>All fields are required</strong></html>";
+      echo "<html><br><strong style='color: red;'>All fields are required</strong><br></html>";
     }
 
     if(!is_numeric($SSN) || strlen($SSN) != 9)
     {
-      echo "<html><strong style='color: red;'>Invalid SSN</strong></html>";
+      echo "<html><br><strong style='color: red;'>Invalid SSN</strong><br></html>";
     }
 
     if(strlen($pword) <= 8)
     {
-      echo "<html><strong style='color: red;'>Your password should be at least 8 characters long</strong></html>";
+      echo "<html><br><strong style='color: red;'>Your password should be at least 8 characters long</strong><br></html>";
     }
 
     if(!preg_match('/[A-Za-z]/', $pword) && !preg_match('/[0-9]/', $pword))
     {
-      echo "<html><strong style='color: red;'>Your password must have letters AND numbers</strong></html>";
+      echo "<html><br><strong style='color: red;'>Your password must have letters AND numbers</strong><br></html>";
     }
 
     //checks which state option was selected
@@ -51,11 +51,11 @@
     }
     if($_POST['state'] == "MD")
     {
-      echo "<html><strong style='color: red;'>You are ineligible for DC unemployment</strong></html>";
+      echo "<html><br><strong style='color: red;'>You are ineligible for DC unemployment</strong><br></html>";
     }
     if($_POST['state'] == "VA")
     {
-      echo "<html><strong style='color: red;'>You are ineligible for DC unemployment</strong></html>";
+      echo "<html><br><strong style='color: red;'>You are ineligible for DC unemployment</strong><br></html>";
     }
 
     //checks which gender option was selected
@@ -75,7 +75,7 @@
     //check SSN
     if(in_array($SSN, $notIssuedFull))
     {
-      echo "<html><strong style='color: red;'>Invalid SSN</strong></html>";
+      echo "<html><br><strong style='color: red;'>Invalid SSN</strong><br></html>";
     }
     else{
       $query = "INSERT into applicants soc_sec_id, first_name, last_name, email, username, dob, address, city, state_id, zipcode, gender
@@ -83,10 +83,12 @@
 
       $results = mysqli_query($conn, $query);
 
+      /*
       if(mysqli_num_rows($results) == 0)
       {
         echo "Invalid D.C. SSN";
       }
+      */
     }
   }
 ?>
