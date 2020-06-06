@@ -22,7 +22,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="home.php">
     <div class="logo-image">
         <img src="images/unemployment-portal-logo.png" class="img-fluid" alt="">
     </div>
