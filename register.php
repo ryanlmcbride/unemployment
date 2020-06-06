@@ -31,8 +31,10 @@ require("processRegister.php");
       <form method="POST" align="left">
         <div class="form-group">
           <div class="col-md-6">
-          <label for="soc_sec_id"> Social Security Number</label>
-          <input type="password" class="form-control" placeholder="SSN" name="soc_sec_id">
+          <label for="soc_sec_id"> Social Security Number (First Three Digits)</label>
+          <input type="password" class="form-control" placeholder="first 3 digits of ssn" name="soc_sec_id">
+          <label for="ssn2"> Social Security Number (remaining numbers)</label>
+          <input type="password" class="form-control" placeholder="remaining numbers of ssn" name="ssn2">
           <div class="form-group">
             <label for="dob"> Date of Birth </label>
             <input type="text" class="form-control" placeholder="MM/DD/YYYY" name="dob">
@@ -85,9 +87,9 @@ require("processRegister.php");
           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" name="state_id">
             State </button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#" name="state1">State 1</a>
-              <a class="dropdown-item" href="#" name="state2">State 2</a>
-              <a class="dropdown-item" href="#" name="state3">State 3</a>
+              <a class="dropdown-item" name="state" value="DC">DC</a>
+              <a class="dropdown-item" name="state" value="MD">MD</a>
+              <a class="dropdown-item" name="state" value="VA">VA</a>
             </div>
         </div>
         <div class="form-group">
