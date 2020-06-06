@@ -5,7 +5,7 @@
     $SSN = trim($_POST['soc_sec_id']);
     $fullSSN = $SSN . trim($_POST['ssn2']);
     $DOB = trim($_POST['dob']);
-    $gender = "";
+    $gender =($_POST['gender']);
     $fname = trim($_POST['first_name']);
     $lname = trim($_POST['last_name']);
     $email = trim($_POST['email']);
@@ -13,7 +13,7 @@
     $pword = trim($_POST['password']);
     $address = trim($_POST['address']);
     $city = trim($_POST['city']);
-    $stateid = "";
+    $stateid=($_POST['stateid']);
     $zip = trim($_POST['zipcode']);
 
     //invalid SSN's
@@ -34,7 +34,7 @@
       echo "<html><br><strong style='color: red;'>Invalid SSN</strong><br></html>";
     }
 
-    if(strlen($pword) <= 8)
+    if(strlen($pword) < 8)
     {
       echo "<html><br><strong style='color: red;'>Your password should be at least 8 characters long</strong><br></html>";
     }

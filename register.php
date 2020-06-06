@@ -35,7 +35,7 @@ require("processRegister.php");
     <strong><p class="jumbotron" style="font-size:40px; color: #ffffff; background-color:#96c3ee; text-align:center; font-family:arial;">Register</p></strong>
     <div class="container-fluid">
       <form method="POST">
-      Back to Login <a href="adminLogin.php">Here</a>
+      Back to Login <a href="login.php">Here</a>
       <div class="row" id="main">
           <div class="col-sm-6">
             <div class="form-group row">
@@ -109,17 +109,14 @@ require("processRegister.php");
               <input type="text" class="form-control" placeholder="Address" name="address">
             </div>
             <div class="form-group">
-              <div class="dropdown">
-              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" name="state_id">
-              State </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" name="state" value="DC">DC</a>
-                  <a class="dropdown-item" name="state" value="MD">MD</a>
-                  <a class="dropdown-item" name="state" value="VA">VA</a>
-                </div>
-              </div>
+              <label for="stateid">State: </label>
+              <select name="stateid" id="stateid">
+                <option value="0">D.C.</option>
+                <option value="1">Maryland</option>
+                <option value="2">Virigina</option>
+                <option value="3">Outside the DMV</option>
+              </select>
             </div>
-
             </div>
           </div>
       </form>

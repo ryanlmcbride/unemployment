@@ -1,3 +1,4 @@
+<?php include('db.php'); include('processClaim.php'); ?>
 <html>
   <head>
     <title>Application</title>
@@ -64,14 +65,14 @@
                 <input type="text" class="form-control" placeholder="City" name="city">
               </div>
             </div>
-            <div class="dropdown">
-              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" name="state">
-                State </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">State 1</a>
-                  <a class="dropdown-item" href="#">State 2</a>
-                  <a class="dropdown-item" href="#">State 3</a>
-                </div>
+            <div class="form-group">
+              <label for="stateid">State: </label>
+              <select name="stateid" id="stateid">
+                <option value="0">D.C.</option>
+                <option value="1">Maryland</option>
+                <option value="2">Virigina</option>
+                <option value="3">Outside the DMV</option>
+              </select>
             </div>
             <div class="form-group">
               <label for="e_zip">Zip Code</label>

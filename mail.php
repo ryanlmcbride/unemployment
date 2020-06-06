@@ -1,5 +1,5 @@
 <?php
-
+include("inbox.php");
 $sendTo=$_GET["sendToAddress"];
 $messagebox=trim($_GET["message"]);
 $message = '<html>

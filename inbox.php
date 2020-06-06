@@ -9,9 +9,9 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <body>
-      <?php require("navbar.php"); ?>
+      <?php require("navbar.php");?>
     <div class="container">
-    <p class="jumbotron" style="font-size:40px; background-color:#b3ffff; text-align:center;">Welcome !!</p>
+    <p class="jumbotron" style="font-size:40px; background-color:#96c3ee; text-align:center;">Welcome !!</p>
     <div class="row" id="main">
             <div class="col-md-3"></div>
             <div class="col-md-6">
@@ -31,7 +31,7 @@
                     </tr>
                     <tr>
                         <th>
-                            <button class="btn btn-success"> Submit</buttton>
+                            <button class="btn btn-primary"> Send</buttton>
                         </th>
                         <td></td>
                     </tr>

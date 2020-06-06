@@ -9,7 +9,7 @@ require("db.php");
     $department=trim($_POST["f_department"]);
     $address=trim($_POST["f_address"]);
     $city=trim($_POST["city"]);
-    $state=trim($_POST["state"]);
+    $state=trim($_POST["stateid"]);
     $zip=trim($_POST["e_zip"]);
     $email=trim($_POST["e_email"]);
     $phone=trim($_POST["e_phone"]);
@@ -34,7 +34,7 @@ require("db.php");
       echo "<html><br><strong style='color: red;'>Invalid SSN</strong><br></html>";
     }
 
-    $query=myqli_query("INSERT INTO claims WHERE last_date_of_employment='$SSN' AND employer_name='' and department='$department' and employer_address='$address' employer_state_id='$state' employer_zip_code='$zip' employer_city='$city' employer_email='$email' employer_phone='$phone' salary='$salary' applicant_soc_sec='soc_sec_id' application_status='' open admin_id=''");
+    $query=mysqli_query("INSERT INTO claims WHERE last_date_of_employment='$date' AND employer_name='$company' and department='$department' and employer_address='$address' employer_state_id='$state' employer_zip_code='$zip' employer_city='$city' employer_email='$email' employer_phone='$phone' salary='$salary' applicant_soc_sec='$SSN' application_status='' open admin_id=''");
     $result=mysqli_query($conn, $query);
     $row=mysqli_fetch_assoc($result);
     $count=mysqli_num_rows($result);
