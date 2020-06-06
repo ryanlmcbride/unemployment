@@ -1,4 +1,4 @@
-<?php include("processSSN.php");
+<?php include("processSSN.php"); require("db.php");
   if(isset($_POST["submit"]))
   {
     $ss1=trim($_POST['snn1']);
