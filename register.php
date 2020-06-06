@@ -1,3 +1,6 @@
+<?php
+require("processRegister.php");
+?>
 <html>
   <head>
     <title>Register</title>
@@ -74,15 +77,15 @@
         <div class="form-group">
           <label for="gender">Gender</label><br>
           <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" class="custom-control-input" id="customRadio" name="female" value="customEx">
+          <input type="radio" class="custom-control-input" id="customRadio" name="gender" value="female">
           <label class="custom-control-label" for="female">Female</label>
         </div>
         <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" class="custom-control-input" id="customRadio2" name="male" value="customEx">
+          <input type="radio" class="custom-control-input" id="customRadio2" name="gender" value="male">
           <label class="custom-control-label" for="male">Male</label>
         </div>
         <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" class="custom-control-input" id="customRadio2" name=" nbinary" value="customEx">
+          <input type="radio" class="custom-control-input" id="customRadio2" name="gender" value="nbinary">
           <label class="custom-control-label" for="nbinary">Non-binary</label>
         </div>
         </div>
@@ -115,12 +118,12 @@
           <input type="text" class="form-control" placeholder="City" name="city">
         </div>
         <div class="dropdown">
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" name="state_id">
             State </button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">State 1</a>
-              <a class="dropdown-item" href="#">State 2</a>
-              <a class="dropdown-item" href="#">State 3</a>
+              <a class="dropdown-item" href="#" name="state1">State 1</a>
+              <a class="dropdown-item" href="#" name="state2">State 2</a>
+              <a class="dropdown-item" href="#" name="state3">State 3</a>
             </div>
         </div>
         <div class="form-group">
