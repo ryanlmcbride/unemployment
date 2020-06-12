@@ -39,9 +39,9 @@ require("processRegister.php");
       <div class="row" id="main">
           <div class="col-sm-6">
             <div class="form-group row">
-              <div class="col-xs-2">
-                <label for="soc_sec_id"> Social Security Number (First Three Digits)</label>
-                <input type="password" maxlength="3" class="form-control" placeholder="first 3 digits of ssn" name="soc_sec_id">
+              <div class="col-xs-6">
+                <label for="soc_sec_id"> Social Security Number</label>
+                <input type="password" maxlength="9" class="form-control" placeholder="XXXXXXXXX" name="soc_sec_id">
               </div>
             </div>
             <div class="form-group">
@@ -60,43 +60,6 @@ require("processRegister.php");
               </div>
             </div>
             <div class="form-group">
-              <label for="first_name"> First Name </label>
-              <input type="text" class="form-control" placeholder="First Name" name="first_name">
-            </div>
-            <div class="form-group">
-              <label for="email"> Email Address </label>
-              <input type="text" class="form-control" placeholder="E-mail" name="email">
-            </div>
-            <div class="form-group">
-              <label for="password"> Password </label>
-              <input type="password"  class="form-control" placeholder="Password" name="password">
-            </div>
-            <div class="form-group row">
-              <div class="col-xs-2">
-                <label for="city"> City </label>
-                <input type="text" class="form-control" placeholder="City" name="city">
-              </div>
-            </div>
-            <div class="form-group row">
-              <div class="col-xs-2">
-                <label for="zipcode">Zip Code</label>
-                <input type="text" class="form-control" placeholder="Zip" name="zipcode">
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary" name="submit">Register</button>
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group">
-              <label for="ssn2"> Social Security Number (remaining numbers)</label>
-              <input type="password" maxlength="6" class="form-control" placeholder="remaining numbers of ssn" name="ssn2">
-            </div>
-            <div class="form-group row">
-              <div class="col-xs-2">
-                <label for="dob"> Date of Birth </label>
-                <input type="text" class="form-control" placeholder="MM/DD/YYYY" name="dob"><br><br><br>
-              </div>
-            </div>
-            <div class="form-group">
               <label for="last_name"> Last Name </label>
               <input type="text" class="form-control" placeholder="Last Name" name="last_name">
             </div>
@@ -108,14 +71,51 @@ require("processRegister.php");
               <label for="address"> Address </label>
               <input type="text" class="form-control" placeholder="Address" name="address">
             </div>
+            <div class="form-group row">
+              <div class="col-xs-2">
+                <label for="city"> City </label>
+                <input type="text" class="form-control" placeholder="City" name="city">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" name="submit">Register</button>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group row">
+              <div class="col-xs-2">
+                <label for="dob"> Date of Birth </label>
+                <input type="text" class="form-control" placeholder="MM/DD/YYYY" name="dob">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="first_name"> First Name </label>
+              <input type="text" class="form-control" placeholder="First Name" name="first_name"><br><br><br><br><br>
+            </div>
             <div class="form-group">
-              <label for="stateid">State: </label>
+              <label for="email"> Email Address </label>
+              <input type="text" class="form-control" placeholder="E-mail" name="email">
+            </div>
+            <div class="form-group">
+              <label for="password"> Password </label>
+              <input type="password"  class="form-control" placeholder="Password" name="password">
+            </div>
+            <div class="form-group">
+              <label for="stateid">State: </label><br>
+              <?php
+                $query="SELECT * FROM states";
+                $results=mysqli_query($conn, $query);
+                $row=mysqli_fetch_assoc($results);
+               ?>
               <select name="stateid" id="stateid">
-                <option value="0">D.C.</option>
-                <option value="1">Maryland</option>
-                <option value="2">Virigina</option>
-                <option value="3">Outside the DMV</option>
+                <?php while($row=mysqli_fetch_assoc($results)){ ?>
+                 <option value="<?php echo $row['id'];?>"><?php echo $row['name'];?></option>
+               <?php } ?>
               </select>
+            </div>
+            <div class="form-group row">
+              <div class="col-xs-2">
+                <label for="zipcode">Zip Code</label>
+                <input type="text" class="form-control" placeholder="Zip" name="zipcode">
+              </div>
             </div>
             </div>
           </div>
