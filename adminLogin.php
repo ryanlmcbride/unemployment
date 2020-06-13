@@ -1,3 +1,4 @@
+<?php include("adminProcessL.php"); ?>
 <html>
     <head>
       <title>Admin Login</title>
