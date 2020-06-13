@@ -17,7 +17,7 @@ $mail = new PHPMailer(TRUE);
 /* Open the try/catch block. */
 try {
    /* Set the mail sender. */
-   $mail->setFrom('hsccdc@gmail.com', 'HSCC DC TEAM');
+   $mail->setFrom('hsccdc@gmail.com', 'BDPA UNEMPLOYEMENT');
 
    /* Add a recipient. */
    $mail->addAddress($sendTo, 'Ryan McBride');
@@ -56,7 +56,7 @@ try {
    /* Finally send the mail. */
    $mail->send();
 
-header('Location: success.php');
+header('Location: home.php');
 }
 
 catch (Exception $e)
