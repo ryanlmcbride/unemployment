@@ -1,4 +1,4 @@
-<?php  include('db.php'); include('adminLogin.php'); ?>
+<?php  include('db.php'); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
