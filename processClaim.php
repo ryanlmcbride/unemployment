@@ -52,12 +52,11 @@ require("db.php");
         if($salary<=45000){
           $assign="INSERT INTO claims(admin_id) VALUES(1)";
         }
-
-    $query=mysqli_query("INSERT into claims (last_date_of_employment, employer_name, department, employer_address, employer_state_id, employer_zip_code, employer_city, employer_email, employer_phone, salary, applicant_soc_sec, application_status, open, admin_id)
+    $query="INSERT into claims (last_date_of_employment, employer_name, department, employer_address, employer_state_id, employer_zip_code, employer_city, employer_email, employer_phone, salary, applicant_soc_sec, application_status, open, admin_id)
     VALUES('$date', '$company', '$department', '$address', '$state', '$zip', '$city', '$email', '$phone', '$salary', '$SSN', 'Pending', 'Y', '$assign')";
 
     $results = mysqli_query($conn, $query);
-    header("location:home.php")
+    header("location:home.php");
     }
 
   /*  if($count>0)
@@ -78,9 +77,8 @@ require("db.php");
       header('location:home.php');
     }*/
     }
-    else {
+  /* else {
       echo 'Claim could not be filed';
-    }
-  }
+    }*/
   }
  ?>
