@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title> </title>
+        <title>Login</title>
     </head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
      <!-- JS, Popper.js, and jQuery -->
@@ -15,12 +15,12 @@
         <div class="col-md-6">
     <form method="POST" align="left">
         <div class="form-group">
-          <label for="soc_sec_id"> Admin Username </label>
-          <input type="password" class="form-control" placeholder="SSN" name="soc_sec_id">
+          <label for="employee_id"> Admin ID </label>
+          <input type="password" class="form-control" placeholder="Employee ID" name="employee_id" required>
         </div>
         <div class="form-group">
-          <label for="dob"> Password </label>
-          <input type="text" class="form-control" placeholder="" name="pWord">
+          <label for="pWord"> Password </label>
+          <input type="password" class="form-control" placeholder="*******" name="pWord" required>
         </div>
        <br> <center><button type="submit" name="submit" class="btn btn-primary"> Login </button></center>
         </form>

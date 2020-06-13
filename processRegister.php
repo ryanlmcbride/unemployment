@@ -135,8 +135,8 @@
         //$preparedStatement = mysqli_prepare($conn, $query);
         //mysqli_stmt_bind_param($preparedStatement, issssssisss, $SSN, $fname, $lname, $email, $uname, $DOB, $address, $city, $stateid, $zip, $gender);
         //msqli_stmt_execute($preparedStatment);
-
-        header("Location: success.php");
+        echo "registration successful!";
+        header("Location: home.php");
       }
     }
   }
