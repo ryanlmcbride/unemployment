@@ -1,5 +1,6 @@
 <?php
 require("db.php");
+include("mail.php");
   if(isset($_POST["submit"]))
   {
     require('db.php');
@@ -55,6 +56,8 @@ require("db.php");
     $query="INSERT into claims (last_date_of_employment, employer_name, department, employer_address, employer_state_id, employer_zip_code, employer_city, employer_email, employer_phone, salary, applicant_soc_sec, application_status, open, admin_id)
     VALUES('$date', '$company', '$department', '$address', '$state', '$zip', '$city', '$email', '$phone', '$salary', '$SSN', 'Pending', 'Y', '$assign')";
 
+    $msg="Your claim is now pending";
+    //mail()
     $results = mysqli_query($conn, $query);
     header("location:home.php");
     }
