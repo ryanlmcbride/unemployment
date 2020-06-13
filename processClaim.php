@@ -15,14 +15,6 @@ require("db.php");
     $phone=trim($_POST["e_phone"]);
     $salary=trim($_POST["salary"]);
 
-    //invalid SSN's
-    $notIssued1 = range(237, 246);
-    $notIssued2 = range(587, 699);
-    $notIssued3 = range(750, 772);
-    $notIssued4 = range(900, 999);
-    $notIssued5 = array(000, 666);
-    $notIssuedFull = array_merge($notIssued1, $notIssued2, $notIssued3, $notIssued4, $notIssued5);
-
     //checks if fields are empty
     if(empty($date)||empty($company)||empty($email)||empty($SSN)||empty($department)||empty($address)||empty($salary)||empty($city)||empty($state)||empty($zip)||empty($phone))
     {
@@ -33,15 +25,42 @@ require("db.php");
     {
       echo "<html><br><strong style='color: red;'>Invalid SSN</strong><br></html>";
     }
+    else
+    {
+      $notIssued1 = range(237, 246);
+      $notIssued2 = range(587, 699);
+      $notIssued3 = range(750, 772);
+      $notIssued4 = range(900, 999);
+      $notIssued5 = array(000, 666);
+      $notIssuedFull = array_merge($notIssued1, $notIssued2, $notIssued3, $notIssued4, $notIssued5);
 
-    $query=mysqli_query("INSERT INTO claims WHERE last_date_of_employment='$date' AND employer_name='$company' and department='$department' and employer_address='$address' employer_state_id='$state' employer_zip_code='$zip' employer_city='$city' employer_email='$email' employer_phone='$phone' salary='$salary' applicant_soc_sec='$SSN' application_status='Pending' open='Y'");
-    if($salary>=75000){
-      
+      $substr_soc = substr($SSN, 0, 3);
+      $social_range = range(577,579);
+      if(!in_array($substr_soc, $social_range) || in_array($notIssuedFull))
+      {
+        echo "Please enter a valid social security number";
+        die();
+      }
+      else
+      {
+        if($salary>=75000){
+          $assign="INSERT INTO claims(admin_id) VALUES(3)";
+        }
+        if($salary>=45000 && $salary<75000){
+          $assign="INSERT INTO claims(admin_id) VALUES(2)";
+        }
+        if($salary<=45000){
+          $assign="INSERT INTO claims(admin_id) VALUES(1)";
+        }
+
+    $query=mysqli_query("INSERT into claims (last_date_of_employment, employer_name, department, employer_address, employer_state_id, employer_zip_code, employer_city, employer_email, employer_phone, salary, applicant_soc_sec, application_status, open, admin_id)
+    VALUES('$date', '$company', '$department', '$address', '$state', '$zip', '$city', '$email', '$phone', '$salary', '$SSN', 'Pending', 'Y', '$assign')";
+
+    $results = mysqli_query($conn, $query);
+    header("location:home.php")
     }
-    $result=mysqli_query($conn, $query);
-    $row=mysqli_fetch_assoc($result);
-    $count=mysqli_num_rows($result);
-    if($count>0)
+
+  /*  if($count>0)
     {
       session_start();
       $_SESSION['soc_sec_id']= $row['soc_sec_id'];
@@ -57,9 +76,11 @@ require("db.php");
       $_SESSION['salary']= $row['salary'];
       echo("Your claim has been successfully filed");
       header('location:home.php');
+    }*/
     }
     else {
       echo 'Claim could not be filed';
     }
+  }
   }
  ?>

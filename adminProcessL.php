@@ -26,6 +26,6 @@ if($count>0) {
 }
 else {
     echo 'Login credentials do not match';
-}
+  }
 }
 ?>

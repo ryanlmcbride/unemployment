@@ -39,7 +39,7 @@
       <?php
       if($loginst!=1){ ?>
       <li class="nav-item">
-        <a class="nav-link" href="#">View Claims</a>
+        <a class="nav-link" href="viewClaims.php">View Claims</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="viewApplicants.php">View Applicants</a>

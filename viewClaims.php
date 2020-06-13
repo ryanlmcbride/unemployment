@@ -2,8 +2,9 @@
 include ('db.php');
 //$adminID=$_session['adminID'];
 $adminID="1";
-$query= "SELECT a.first_name, a.last_name, a.email, c.employer_name FROM 'applicants' AS a INNER JOIN 'claims' AS c ON a.soc_sec_id= c.applicant_soc_sec AND c.admin_id='$adminID'";
+$query= "SELECT a.first_name, a.last_name, a.email, c.salary, c.application_status, c.open FROM applicants AS a INNER JOIN claims AS c ON a.soc_sec_id= c.applicant_soc_sec AND c.admin_id='$adminID';";
 $result=mysqli_query($conn,$query);
+if(isset($_POST[]))
 ?>
 <html>
     <head>
@@ -14,34 +15,41 @@ $result=mysqli_query($conn,$query);
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     </head>
     <body>
+      <?php include("adminNav.php"); ?>
     <div class="container">
     <strong><p class="jumbotron" style="font-size:40px; color: #ffffff; background-color:#96c3ee; text-align:center; font-family:arial;">Applicants</p></strong>
+    <div class="container">
+    <form method="POST">
     <div class="row" id="main">
     <div class="col-md-2"> </div>
     <div class="col-md-8">
         <table style="width:100%">
             <tr>
-                <th>Name </th>
-                <th>Email</th>
-                <th>Former Employer</th>
+                <th> Name </th>
+                <th> Email</th>
+                <th> Salary</th>
+                <th> Application Status</th>
+                <th> Application Open?</th>
             </tr>
             <?php
 				while($row=mysqli_fetch_assoc($result)){
 			?>
              <tr>
-                <td ><?php echo $row["first_name"] .  $row["last_name"] ;?></td>
+                <td ><?php echo $row["first_name"] . $row["last_name"];?></td>
                 <td ><?php echo $row["email"];?></td>
-                <td ><?php echo $row["employer_name"];?></td>
-                <td><button type="submit" name="delete" class="btn btn-danger"> Delete </button></td>
+                <td ><?php echo $row["salary"];?></td>
+                <td ><?php echo $row["application_status"];?></td>
+                <td ><?php echo $row["open"];?></td>
+                <td><button type="submit" name="approve" class="btn btn-success"> Approve </button></td>
+                <td><button type="submit" name="deny" class="btn btn-danger"> Deny </button></td>
             </tr>
                 <?php }?>
         </table>
         </div>
         <div class="col-md-2"> </div>
         </div>
-
-
         </div>
         </div>
+      </form></div>
     </body>
 </html>
