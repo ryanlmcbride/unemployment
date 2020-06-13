@@ -5,10 +5,10 @@ if(isset($_POST["submit"]))
     include("db.php");
     $employeeId=trim($_POST['employee_id']);
     $password=trim($_POST['pWord']);
-    $query = "SELECT * FROM admin WHERE employee_id='$employeeId' AND password='$password'";
+    $query = "SELECT * FROM admin WHERE admin_id='$employeeId' AND password='$password'";
     $result = mysqli_query($conn, $query);
-    $row= mysqli_fetch_assoc($result);
-    $count= mysqli_num_rows($result);
+  /*  $row= mysqli_fetch_assoc($result);
+    $count= mysqli_num_rows($result);*/
     $ses_sql = mysqli_query($conn,"SELECT employee_id FROM admin WHERE employee_id='$employeeId'");
 
     $row=mysqli_fetch_array($ses_sql, MYSQLI_ASSOC);
