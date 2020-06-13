@@ -26,7 +26,7 @@
       echo "<html><br><strong style='color: red;'>You must enter your last name</strong><br></html>";
       die();
     }
-    if($soc == '')
+    if($SSN == '')
     {
       echo "<html><br><strong style='color: red;'>You must enter a social security number.</strong><br></html>";
       die();
@@ -69,16 +69,16 @@
 
 
     //checks which state option was selected
-    if($_POST['state'] == "DC")
+    if($_POST['stateid'] == "DC")
     {
       $stateid = "DC";
     }
-    if($_POST['state'] == "MD")
+    if($_POST['stateid'] == "MD")
     {
       echo "<html><br><strong style='color: red;'>You are ineligible for DC unemployment</strong><br></html>";
       die();
     }
-    if($_POST['state'] == "VA")
+    if($_POST['stateid'] == "VA")
     {
       echo "<html><br><strong style='color: red;'>You are ineligible for DC unemployment</strong><br></html>";
       die();
@@ -99,13 +99,6 @@
     }
 
     //check SSN
-    $notIssued1 = range(237, 246);
-    $notIssued2 = range(587, 699);
-    $notIssued3 = range(750, 772);
-    $notIssued4 = range(900, 999);
-    $notIssued5 = array(000, 666);
-    $notIssuedFull = array_merge($notIssued1, $notIssued2, $notIssued3, $notIssued4, $notIssued5);
-
     if(!is_numeric($SSN))
     {
       echo "Please enter a valid social security number";
@@ -113,7 +106,14 @@
     }
     else
     {
-      $substr_soc = substr($SSN, 0, 2);
+      $notIssued1 = range(237, 246);
+      $notIssued2 = range(587, 699);
+      $notIssued3 = range(750, 772);
+      $notIssued4 = range(900, 999);
+      $notIssued5 = array(000, 666);
+      $notIssuedFull = array_merge($notIssued1, $notIssued2, $notIssued3, $notIssued4, $notIssued5);
+
+      $substr_soc = substr($SSN, 0, 3);
       $social_range = range(577,579);
       if(!in_array($substr_soc, $social_range) || in_array($notIssuedFull))
       {
@@ -123,18 +123,18 @@
       else
       {
         //process info
-        //$query = "INSERT into applicants (soc_sec_id, first_name, last_name, email, username, dob, address, city, state_id, zipcode, gender)
-        //VALUES('$SSN', '$fname', '$lname', '$email', '$uname', '$DOB', '$address', '$city', '$stateid', '$zip', '$gender')";
+        $query = "INSERT into applicants (soc_sec_id, first_name, last_name, email, username, dob, address, city, state_id, zipcode, gender)
+        VALUES('$SSN', '$fname', '$lname', '$email', '$uname', '$DOB', '$address', '$city', '$stateid', '$zip', '$gender')";
 
-        //$results = mysqli_query($conn, $query);
+        $results = mysqli_query($conn, $query);
 
         //process info second method with extra security
-        $query = "INSERT into applicants (soc_sec_id, first_name, last_name, email, username, dob, address, city, state_id, zipcode, gender)
-        VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        //$query = "INSERT into applicants (soc_sec_id, first_name, last_name, email, username, dob, address, city, state_id, zipcode, gender)
+        //VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-        $preparedStatement = mysqli_prepare($conn, $query);
-        mysqli_stmt_bind_param($preparedStatement, issssssisss, $SSN, $fname, $lname, $email, $uname, $DOB, $address, $city, $stateid, $zip, $gender);
-        msqli_stmt_execute($preparedStatment);
+        //$preparedStatement = mysqli_prepare($conn, $query);
+        //mysqli_stmt_bind_param($preparedStatement, issssssisss, $SSN, $fname, $lname, $email, $uname, $DOB, $address, $city, $stateid, $zip, $gender);
+        //msqli_stmt_execute($preparedStatment);
 
         header("Location: success.php");
       }
