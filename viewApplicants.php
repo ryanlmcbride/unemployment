@@ -1,6 +1,9 @@
 <?php
 include ('db.php');
-$query= "SELECT * FROM Aplication"
+//$adminID=$_session['adminID'];
+$adminID="1";
+$query= "SELECT a.first_name, a.last_name, a.email, c.employer_name FROM 'applicants' AS a INNER JOIN 'claims' AS c ON a.soc_sec_id= c.applicant_soc_sec AND c.admin_id='$adminID'";
+$result=mysqli_query($conn,$query);
 ?>
 <html>
     <head>
@@ -19,11 +22,23 @@ $query= "SELECT * FROM Aplication"
         <table style="width:100%">
             <tr>
                 <th>Name </th>
-                <th> SSN</th>
+                <th> Email</th>
                 <th> Former Employer</th> 
                 <th> View Application</th> 
             </tr>
-            
+            <?php
+				while($row=mysqli_fetch_assoc($result)){
+			?>
+             <tr>
+                <td ><?php echo $row["first_name"];?></td>
+                <td ><?php echo $row["last_name"];?></td>
+                <td ><?php echo $row["email"];?></td>
+                <td ><?php echo $row["employer_name"];?></td>
+            </tr>
+            <tr>
+                 <td><?php echo $row['first'] ?> </td>       
+            </tr>
+                <?php }?>
         </table>
         </div>
         <div class="col-md-2"> </div>
