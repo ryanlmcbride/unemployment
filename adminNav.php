@@ -1,4 +1,4 @@
-<?php  include('db.php'); ?>
+<?php  include('db.php'); include("adminProcessL.php")?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
