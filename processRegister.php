@@ -53,17 +53,35 @@
     }
     if($DOB == '')
     {
-      echo "<html><br><strong style='color: red;'>You must enter your date of birth</strong><br></html>";
+      echo "<div class="alert alert-danger" role="alert">
+        This field is required.
+          <!--Close button on alert-->
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+                </button>
+                  </div>";
       die();
     }
     if($pword == '')
     {
-      echo "<html><br><strong style='color: red;'>Your must enter your password</strong><br></html>";
+      echo "<div class="alert alert-danger" role="alert">
+        This field is required.
+          <!--Close button on alert-->
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+                </button>
+                  </div>";
       die();
     }
     if(strlen($pword) <= 8)
     {
-      echo "<html><br><strong style='color: red;'>Your password should be at least 8 characters long</strong><br></html>";
+      echo "<div class="alert alert-danger" role="alert">
+        Your password should be at least 8 characters long.
+          <!--Close button on alert-->
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+                </button>
+                  </div>";
       die();
     }
 
@@ -75,12 +93,24 @@
     }
     if($_POST['stateid'] == "MD")
     {
-      echo "<html><br><strong style='color: red;'>You are ineligible for DC unemployment</strong><br></html>";
+      echo "<div class="alert alert-danger" role="alert">
+        You are ineligible for D.C. unemployment.
+          <!--Close button on alert-->
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+                </button>
+                  </div>";
       die();
     }
     if($_POST['stateid'] == "VA")
     {
-      echo "<html><br><strong style='color: red;'>You are ineligible for DC unemployment</strong><br></html>";
+      echo "<div class="alert alert-danger" role="alert">
+        You are ineligible for D.C. unemployment.
+          <!--Close button on alert-->
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+                </button>
+                  </div>";
       die();
     }
 
@@ -117,7 +147,13 @@
       $social_range = range(577,579);
       if(!in_array($substr_soc, $social_range) || in_array($notIssuedFull))
       {
-        echo "Please enter a valid social security number";
+        echo "<div class="alert alert-danger" role="alert">
+        Please enter a valid social security number.
+          <!--Close button on alert-->
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+                </button>
+                  </div>";
         die();
       }
       else

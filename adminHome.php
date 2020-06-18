@@ -28,13 +28,13 @@
       <form method="POST" align="left">
         <div class="form-group">
           <div class="row">
-            <div class="col-sm-6">
-              <p>
-                Unemployment is defined as the state of someone who doesn’t have a job. It is something society is suffering from right now, especially with the coronavirus (COVID-19), the whole country is under quarantine restrictions and regulations. With the pandemic, many jobs have unfortunately laid off employees due to the stay at home orders, leaving many people without money to adhear to basic necessities.
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-8">
+              <p class="form-group" style="text-align: center;"> As an admin, your job is to manage the accounts and claims of the claimants that are assigned to you. You are assigned claims and users based on their salaries. Approve them or Deny their unemployment requests and you are able to delete users that are assigned to you, but know that you are responsible for their information so before you rid of any information submitted. Please do your best with your assigned claimants to allows them to get the benefits they need.
               </p>
             </div>
-            <div class="col-sm-6">
-              <p class="form-group" style="text-align: center;"> As an admin, your job is to manage the accounts and claims of the claimants that are assigned to you. You are assigned claims and users based on their salaries. Approve them or Deny their unemployment requests and you are able to delete users that are assigned to you, but know that you are responsible for their information so before you rid of any information submitted. Please do your best with your assigned claimants to allows them to get the benefits they need.
+            <div class="col-sm-2">
               </p>
             </div>
       </form>

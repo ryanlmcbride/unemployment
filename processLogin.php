@@ -25,7 +25,13 @@ if($count>0) {
     header('location:home.php');
 }
 else {
-    echo 'Username and Password do not match';
+    echo '"<div class="alert alert-danger" role="alert">
+      Login credentials are incorrect
+        <!--Close button on alert-->
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+              </button>
+                </div>"';
 }
 }
 ?>

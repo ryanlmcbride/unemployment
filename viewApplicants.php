@@ -30,7 +30,7 @@ $result=mysqli_query($conn,$query);
 				while($row=mysqli_fetch_assoc($result)){
 			?>
              <tr>
-                <td ><?php echo $row["first_name"] .  $row["last_name"] ;?></td>
+                <td ><?php echo $row["first_name"] . $row["last_name"] ;?></td>
                 <td ><?php echo $row["email"];?></td>
                 <td ><?php echo $row["employer_name"];?></td>
                 <td><button type="submit" name="delete" class="btn btn-danger"> Delete </button></td>

@@ -29,7 +29,11 @@ require("adminProcessL.php");
           <label for="pWord"> Password </label>
           <input type="password" class="form-control" placeholder="*******" name="pWord" required>
         </div>
-       <br> <center><button type="submit" name="submit" class="btn btn-primary"> Login </button></center>
+        <div class="form-group">
+          Not an admin? Sign in <a href="login.php">Here</a>
+        </div>
+        <div class="form-group">
+       <button type="submit" name="submit" class="btn btn-primary">Login</button></div>
         </form>
     </div>
     </body>

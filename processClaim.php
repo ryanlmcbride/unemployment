@@ -19,12 +19,24 @@ include("mail.php");
     //checks if fields are empty
     if(empty($date)||empty($company)||empty($email)||empty($SSN)||empty($department)||empty($address)||empty($salary)||empty($city)||empty($state)||empty($zip)||empty($phone))
     {
-      echo "<html><br><strong style='color: red;'>All fields are required</strong><br></html>";
+      echo '<div class="alert alert-danger" role="alert">
+        This field is required.
+          <!--Close button on alert-->
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+                </button>
+                  </div>';
     }
 
     if(!is_numeric($SSN) || strlen($SSN) != 9)
     {
-      echo "<html><br><strong style='color: red;'>Invalid SSN</strong><br></html>";
+      echo '<div class="alert alert-danger" role="alert">
+        Invalid Social Security Number.
+          <!--Close button on alert-->
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+                </button>
+                  </div>';
     }
     else
     {
@@ -39,8 +51,14 @@ include("mail.php");
       $social_range = range(577,579);
       if(!in_array($substr_soc, $social_range) || in_array($notIssuedFull))
       {
-        echo "Please enter a valid social security number";
-        die();
+        echo '<div class="alert alert-danger" role="alert">
+          Invalid Social Security Number.
+            <!--Close button on alert-->
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                  </button>
+                    </div>';
+        //die();
       }
       else
       {
