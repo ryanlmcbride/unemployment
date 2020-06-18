@@ -11,7 +11,7 @@
         border: 3px solid rgba(#555555, 0.65);
       }
 
-      
+
       table {
         font-family: arial, sans-serif;
         border-collapse: collapse;
@@ -38,7 +38,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <!-- Body Starts Here -->
   <body>
-    <?php require('navbar.php');?>
+    <?php require('adminNav.php');?>
     <strong><p class="jumbotron" style="font-size:40px; color: #ffffff; background-color:#96c3ee; text-align:center; font-family:arial;">Admin Info</p></strong>
 
     <?php
