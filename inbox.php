@@ -11,7 +11,7 @@
 <body>
   <?php include("navbar.php"); ?>
 <div class="container">
-<strong><p class="jumbotron" style="font-size:40px; color: #ffffff; background-color:#96c3ee; text-align:center; font-family:arial;">Applicants</p></strong>
+<strong><p class="jumbotron" style="font-size:40px; color: #ffffff; background-color:#96c3ee; text-align:center; font-family:arial;">Inbox</p></strong>
 <div class="container">
 <form method="POST">
 <div class="row" id="main">

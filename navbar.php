@@ -46,15 +46,13 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
+      <?php $query="SELECT * FROM applicants"; $result=mysqli_query($conn, $query); $row=mysqli_fetch_assoc($result); ?>
       <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Profile
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">View Account Information</a>
-        </div>
-      </li>
+        <li class="nav-item">
+          <?php while($row=mysqli_fetch_assoc($result) && $row==["first_name"]){ ?>
+          <a class="nav-link" href="#"><strong>Welcome, <?php echo ($row['first_name']); ?></strong></a>
+        </li>
+      <?php } ?>
       <li class="nav-item">
         <a class="nav-link" href="logout.php">Sign Out</a>
       </li>

@@ -1,4 +1,4 @@
-<?php  include('db.php'); ?>
+<?php  include('db.php'); include('adminProcessL.php'); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -37,7 +37,7 @@
         <a class="nav-link" href="adminHome.php">Home <span class="sr-only"></span></a>
       </li>
       <?php
-      if($loginst!=1){ ?>
+    //  if($loginst!=1){ ?>
       <li class="nav-item">
         <a class="nav-link" href="viewClaims.php">View Claims</a>
       </li>
@@ -58,12 +58,12 @@
       <li class="nav-item">
         <a class="nav-link" href="logout.php">Sign Out</a>
       </li>
-    <?php } else{ ?>
+    <!--<?php //} //else{ ?>
         <li class="nav-item">
           <a class="nav-link" href="adminLogin.php">Login/Register</a>
         </li>
-      </ul>
-    <?php } ?>
+      </ul>-->
+    <?php// } ?>
     </form>
   </div>
 </nav>

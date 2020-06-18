@@ -3,7 +3,7 @@ require("processLogin.php");
 ?>
 <html>
     <head>
-        <title> </title>
+        <title>User Login</title>
     </head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
      <!-- JS, Popper.js, and jQuery -->
@@ -31,7 +31,7 @@ require("processLogin.php");
         <div class="form-group">
           Admin Sign In <a href="adminLogin.php">Here</a>
         </div>
-       <br> <center><button type="submit" name="submit" class="btn btn-primary"> Login </button></center>
+      <div class="form-group"><button type="submit" name="submit" class="btn btn-primary"> Login </button></div>
         </form>
     </div>
     </body>

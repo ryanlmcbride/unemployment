@@ -17,15 +17,21 @@ if(isset($_POST["submit"]))
 
     if(!empty($employeeId))
     {
-       $loginst = 1;
+    //   $loginst = 1;
     }
-if($count>0) {
+if(!empty($row)) {
     session_start();
     $_SESSION['employee_id']= $row['employee_id'];
     header('location:adminHome.php');
 }
 else {
-    echo 'Login credentials do not match';
+    echo '<div class="alert alert-danger" role="alert">
+        You have entered an incorrect username and/or password. Please, try again.
+          <!--Close button on alert-->
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+                </button>
+                  </div>';
   }
 }
 ?>
