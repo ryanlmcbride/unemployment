@@ -1,7 +1,7 @@
 <?php
 require("db.php");
-include("mail.php");
-  if(isset($_POST["submit"]))
+//include("mail.php");
+  if(isset($_POST["submitC"]))
   {
     require('db.php');
     $SSN=trim($_POST["soc_sec_id"]);
@@ -27,7 +27,16 @@ include("mail.php");
                 </button>
                   </div>';
     }
-
+    if($SSN!=$_POST["soc_sec_id"])
+    {
+      echo '<div class="alert alert-danger" role="alert">
+        Invalid Social Security Number.
+          <!--Close button on alert-->
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+                </button>
+                  </div>';
+    }
     if(!is_numeric($SSN) || strlen($SSN) != 9)
     {
       echo '<div class="alert alert-danger" role="alert">

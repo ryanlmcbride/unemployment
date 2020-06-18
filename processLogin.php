@@ -9,7 +9,7 @@ if(isset($_POST["submit"]))
     $result = mysqli_query($conn, $query);
     $row= mysqli_fetch_assoc($result);
     $count= mysqli_num_rows($result);
-    $ses_sql = mysqli_query($conn,"SELECT username FROM applicants WHERE username='$username' ");
+    $ses_sql = mysqli_query($conn,"SELECT username FROM applicants WHERE username='$username'");
 
     $row=mysqli_fetch_array($ses_sql, MYSQLI_ASSOC);
 

@@ -99,7 +99,7 @@
               </div>
             </div>
             <div class="form-group">
-              <button type="submit" name="submit" class="btn btn-primary">Submit Claim</button>
+              <button type="submit" name="submitC" class="btn btn-primary">Submit Claim</button>
             </div>
           </div>
           <div class="col-md-3"></div>
