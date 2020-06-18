@@ -1,3 +1,6 @@
+<?php
+require("adminProcessL.php");
+?>
 <html>
     <head>
       <title>Admin Login</title>
