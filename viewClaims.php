@@ -1,10 +1,10 @@
 <?php
-include ('db.php');
+include('db.php');
 //$adminID=$_session['adminID'];
 $adminID="1";
 $query= "SELECT a.first_name, a.last_name, a.email, c.salary, c.application_status, c.open FROM applicants AS a INNER JOIN claims AS c ON a.soc_sec_id= c.applicant_soc_sec AND c.admin_id='$adminID';";
 $result=mysqli_query($conn,$query);
-if(isset($_POST[]))
+if(isset($_POST[])) //what are you grabbing here? The brackets are empty bro
 ?>
 <html>
     <head>

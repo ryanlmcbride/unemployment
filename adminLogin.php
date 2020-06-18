@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 <?php
 require("adminProcessL.php");
 ?>
+=======
+<?php include("adminProcessL.php"); ?>
+>>>>>>> 9ff6260841b850da015b5dece4c365d0a5f61d05
 <html>
     <head>
       <title>Admin Login</title>
