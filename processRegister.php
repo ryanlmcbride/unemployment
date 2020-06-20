@@ -18,71 +18,113 @@
     //check if fields are empty
     if($fname == '')
     {
-      echo "<html><br><strong style='color: red;'>You must enter your first name</strong><br></html>";
-      die();
+      echo "<div class='alert alert-danger' role='alert'>
+        Please enter your first name.
+          <!--Close button on alert-->
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
+                </button>
+                  </div>";
+      //die();
     }
     if($lname == '')
     {
-      echo "<html><br><strong style='color: red;'>You must enter your last name</strong><br></html>";
-      die();
+      echo "<div class='alert alert-danger' role='alert'>
+        Please enter your last name.
+          <!--Close button on alert-->
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
+                </button>
+                  </div>";
+      //die();
     }
     if($SSN == '')
     {
-      echo "<html><br><strong style='color: red;'>You must enter a social security number.</strong><br></html>";
-      die();
+      echo "<div class='alert alert-danger' role='alert'>
+        Please enter your social security number.
+          <!--Close button on alert-->
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
+                </button>
+                  </div>";
+      //die();
     }
     if($email == '')
     {
-      echo "<html><br><strong style='color: red;'>You must enter your email</strong><br></html>";
-      die();
+      echo "<div class='alert alert-danger' role='alert'>
+        Please enter your email.
+          <!--Close button on alert-->
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
+                </button>
+                  </div>";
+      //die();
     }
     if($address == '')
     {
-      echo "<html><br><strong style='color: red;'>You must enter your address</strong><br></html>";
-      die();
+      echo "<div class='alert alert-danger' role='alert'>
+        Please enter your address.
+          <!--Close button on alert-->
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
+                </button>
+                  </div>";
+      //die();
     }
     if($city == '')
     {
-      echo "<html><br><strong style='color: red;'>You must enter your city</strong><br></html>";
-      die();
+      echo "<div class='alert alert-danger' role='alert'>
+        Please enter your city.
+          <!--Close button on alert-->
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
+                </button>
+                  </div>";
+      //die();
     }
     if($zip == '')
     {
-      echo "<html><br><strong style='color: red;'>You must enter your zipcode</strong><br></html>";
-      die();
+      echo "<div class='alert alert-danger' role='alert'>
+        Please enter your zip code.
+          <!--Close button on alert-->
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
+                </button>
+                  </div>";
+      //die();
     }
     if($DOB == '')
     {
-      echo "<div class="alert alert-danger" role="alert">
-        This field is required.
+      echo "<div class='alert alert-danger' role='alert'>
+        Please enter your date of birth.
           <!--Close button on alert-->
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
                 </button>
                   </div>";
-      die();
+      //die();
     }
     if($pword == '')
     {
-      echo "<div class="alert alert-danger" role="alert">
-        This field is required.
+      echo "<div class='alert alert-danger' role='alert'>
+        Please enter a password.
           <!--Close button on alert-->
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
                 </button>
                   </div>";
-      die();
+      //die();
     }
     if(strlen($pword) <= 8)
     {
-      echo "<div class="alert alert-danger" role="alert">
+      echo "<div class='alert alert-danger' role='alert'>
         Your password should be at least 8 characters long.
           <!--Close button on alert-->
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
                 </button>
                   </div>";
-      die();
+      //die();
     }
 
 
@@ -93,46 +135,66 @@
     }
     if($_POST['stateid'] == "MD")
     {
-      echo "<div class="alert alert-danger" role="alert">
+      echo "<div class='alert alert-danger' role='alert'>
         You are ineligible for D.C. unemployment.
           <!--Close button on alert-->
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
                 </button>
                   </div>";
-      die();
+      //die();
     }
     if($_POST['stateid'] == "VA")
     {
-      echo "<div class="alert alert-danger" role="alert">
+      echo "<div class='alert alert-danger' role='alert'>
         You are ineligible for D.C. unemployment.
           <!--Close button on alert-->
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
                 </button>
                   </div>";
-      die();
+      //die();
     }
 
     //checks which gender option was selected
-    if($_POST['gender'] == "female")
+    if($gender == '')
     {
-      $gender = "female";
+      echo "<div class='alert alert-danger' role='alert'>
+        Please specify your gender.
+          <!--Close button on alert-->
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
+                </button>
+                  </div>";
     }
-    if($_POST['gender'] == "male")
+    else
     {
-      $gender = "male";
+      if($_POST['gender'] == "female")
+      {
+        $gender = "female";
+      }
+      if($_POST['gender'] == "male")
+      {
+        $gender = "male";
+      }
+      if($_POST['gender'] == "nbinary")
+      {
+        $gender = "nbinary";
+      }
     }
-    if($_POST['gender'] == "nbinary")
-    {
-      $gender = "nbinary";
-    }
+
 
     //check SSN
     if(!is_numeric($SSN))
     {
-      echo "Please enter a valid social security number";
-      die();
+      echo "<div class='alert alert-danger' role='alert'>
+        Please enter a valid social security number.
+          <!--Close button on alert-->
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
+                </button>
+                  </div>";
+      //die();
     }
     else
     {
@@ -147,14 +209,14 @@
       $social_range = range(577,579);
       if(!in_array($substr_soc, $social_range) || in_array($notIssuedFull))
       {
-        echo "<div class="alert alert-danger" role="alert">
+        echo "<div class='alert alert-danger' role='alert'>
         Please enter a valid social security number.
           <!--Close button on alert-->
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+              <span aria-hidden='true'>&times;</span>
                 </button>
                   </div>";
-        die();
+        //die();
       }
       else
       {
